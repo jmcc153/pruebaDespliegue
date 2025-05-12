@@ -2,15 +2,11 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 
 // https://vite.dev/config/
-export default defineConfig(({ command }) => {
+export default defineConfig(() => {
   const config = {
     plugins: [react()],
-    base: "/pruebaDespliegue/",
+    base: "/",
   };
-  if (command != "serve") {
-    config.base = "/pruebaDespliegue/";
-    //config.base = "/";
-  }
   return config;
 });
 
