@@ -7,10 +7,10 @@ export default defineConfig(({ command }) => {
     plugins: [react()],
     base: "/",
   };
-  if (command != "serve") {
+  /* if (command != "serve") {
     config.base = "/pruebaDespliegue/";
     //config.base = "/";
-  }
+  } */
   return config;
 });
 
