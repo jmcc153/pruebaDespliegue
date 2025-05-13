@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig(() => {
   const config = {
     plugins: [react()],
-    base: "/pruebaDespliegue/",
+    base: import.meta.env.VITE_BRANCH === 'main' ? '/pruebaDespliegue/' : '/pruebaDespliegue/test/',
   };
   return config;
 });

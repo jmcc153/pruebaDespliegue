@@ -27,6 +27,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
@@ -35,6 +37,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Set BRANCH env variable
+        run: echo "VITE_BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
 
       - name: Build
         run: npm run build
